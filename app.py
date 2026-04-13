@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 import os
 
-st.set_page_config(page_title="LRS-Audit", layout="wide")
-st.title("LRS-Audit")
+st.set_page_config(page_title="PS-Audit", layout="wide")
+st.title("PS-Audit")
 
 api_key = st.secrets.get("OPENROUTER_API_KEY", "") or st.sidebar.text_input("API Key", type="password")
 uploaded = st.sidebar.file_uploader("Upload file", type=["py", "c", "cpp", "java"])
