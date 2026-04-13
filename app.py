@@ -13,7 +13,7 @@ def scan(prompt, code):
         "https://openrouter.ai/api/v1/chat/completions",
         headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
         json={
-            "model": "meta-llama/llama-3.1-8b-instruct:free",
+            "model": "deepseek/deepseek-r1:free",
             "messages": [{"role": "user", "content": f"{prompt}\n\n{code}"}]
         },
         timeout=30
