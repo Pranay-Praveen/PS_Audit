@@ -18,7 +18,10 @@ def scan(prompt, code):
         },
         timeout=30
     )
-    return r.json()["choices"][0]["message"]["content"]
+    data = r.json()
+    if "choices" not in data:
+        return f"API Error: {data.get('error', {}).get('message', str(data))}"
+    return data["choices"][0]["message"]["content"]
 
 p1 = """Analyze this code for security vulnerabilities. Use this format:
 
